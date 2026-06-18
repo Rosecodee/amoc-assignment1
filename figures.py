@@ -33,22 +33,7 @@ print(f"\nSummary stats (raw):")
 for k, v in stats_raw.items():
     print(f"  {k:12s}: {v:.4g}")
  
-""". Just checked if the range is a mistake
-ds = read.samba()
-v = ds["UPPER_TRANSPORT"].values
-t = ds["TIME"].values
 
-# Bu iki değerin tarihleri
-idx_max = np.argmax(v)
-idx_min = np.argmin(v)
-print(f"Max: {v[idx_max]:.2f} Sv — {t[idx_max]}")
-print(f"Min: {v[idx_min]:.2f} Sv — {t[idx_min]}")
-
-# Etrafındaki 5 gün
-print("\nMax etrafı:")
-print(v[idx_max-3:idx_max+4])
-print("\nMin etrafı:")
-print(v[idx_min-3:idx_min+4])"""
 
 values_filled = fill_gaps(values)
  
