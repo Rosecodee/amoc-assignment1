@@ -1,29 +1,15 @@
-==============================
-Assignment 1 — starter package
-==============================
+Assignment 1 — SAMBA 34.5°S AMOC Time Series
+=============================================
 
-*(This folder is generated from ``../solution/`` — do not edit it by hand;
-edit the solution and re-run ``generate_assignment.py``.)*
+Analysis of the SAMBA upper-cell MOC transport anomaly at 34.5°S
+using Welch spectral estimation and Tukey low-pass filtering.
 
-Implement the stubbed functions in ``spectra_filtering/`` until the tests pass.
+Dataset: SAMBA 34.5°S, UPPER_TRANSPORT, 2013-09-12 to 2017-07-16.
 
-Layout
-------
+To reproduce figures::
 
-- ``spectra_filtering/`` — the package. Worked helpers (loading, gap-filling, the
-  Tukey filter, the Parseval check, the frequency axis, the synthetic tone) are
-  provided. You implement the functions that ``raise NotImplementedError``:
-  ``spectra.welch_psd``, ``spectra.raw_periodogram``,
-  ``filters.butterworth_squared_response``, and the ``analysis`` helpers.
-- ``tests/`` — ``pytest`` checks that pin each function's contract.
+    python figures.py
 
-For Assignment 1 you only need ``analysis.summary_stats`` and ``spectra.welch_psd``
-(plus the provided ``parseval_ratio`` and ``filters.tukey_lowpass``). The rest are
-for later.
+To run tests::
 
-Run::
-
-    pip install -r requirements.txt
-    pytest -q          # implement until the tests you need are green
-
-Each stub's docstring states exactly what to return.
+    pytest tests/ -v
